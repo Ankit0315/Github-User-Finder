@@ -7,6 +7,7 @@ function App() {
   const [isPresent, setIsPresent] = useState(false);
   const [nodata,setNodata]=useState(false)
   const [error, setError] = useState(false); 
+  const [flag, setFlag] = useState(false); 
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
@@ -15,16 +16,23 @@ function App() {
 
   const handlesearchItem = () => {
     if (search === "") {
-      setError(true); 
+      setFlag(true); 
       return;
     }
     fetch(`https://api.github.com/users/${search}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log("data",data)
+        if(data.message == "Not Found"){
+        setError(true);
+        setFlag(false);
+        }
+        else{
         setUserData(data);
         setIsPresent(true);
         setSearch("");
         setNodata(false);
+        }
       })
       .catch((err) => 
       console.log("Error", err),
@@ -46,7 +54,8 @@ function App() {
       <br/>
       <br/>
 
-      {error && <p>Please enter a username</p>} 
+      {flag && <p>Please enter a username</p>} 
+      {error && <p>No user Found</p>}
 
 <div className='usersinfo'>
         {isPresent ? ( 
