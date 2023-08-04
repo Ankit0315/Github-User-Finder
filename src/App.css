@@ -1,38 +1,84 @@
+
 .App {
   text-align: center;
+  margin-top: 25px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type='text'] {
+  color: rgb(0, 0, 0) !important;
+  height: 20px;
+  margin-top: 40px;
+  background-color: rgb(165, 154, 154);
+  border-radius: 20px;
+  height: 30px;
+  font-size: 18px;
+  box-shadow: 2px 2px 1px 2px rgb(235, 231, 222);
+  border: 1px solid lightslategray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
   color: white;
+  font-size: 18px;
+  background-color: #007bff;
+  border: none;
+ border-radius: 20px;
+ width:90px;
+ height: 28px;
+  cursor: pointer;
+  box-shadow: 2px 2px 1px 2px rgb(235, 231, 222);
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ececec;
+  /* background-color: #0c0f0be0; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.info {
+  text-align: center;
+  font-size: 19px;
+}
+
+.info h2 {
+  margin-bottom: 5px;
+}
+
+.info .username {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.detailsLeft {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 18px;
+  /* font-weight: 100px; */
+
+  /* padding: 20px; */
+}
+.detailsRight{
+  text-align: right;
+  margin-top: -126px;
+  /* padding: 20px; */
+  font-size: 18px;
 }
